@@ -64,7 +64,7 @@ document.getElementById("addPathButton").onclick = () => {
 
 document.getElementById("export").onclick = () => {
     const downloadImageSize = 2048;
-    const scale = 2048 / 200;
+    const scale = 2048 / 200.5;
 
     const canvas = document.createElement("canvas");
     canvas.width = downloadImageSize;

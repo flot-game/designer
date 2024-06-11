@@ -93,6 +93,20 @@ document.getElementById("export").onclick = () => {
     a.click();
 }
 
+document.getElementById("importInstructions").onclick = () => {
+    const instructions = JSON.parse(prompt("Enter Instructions JSON", "[]"));
+
+    paths.length = 0;
+
+    for (const pathData of instructions) {
+        paths.push(Path.fromSaveData(pathData));
+    }
+}
+
+document.getElementById("exportInstructions").onclick = () => {
+    prompt("Copy Instructions JSON", JSON.stringify(paths.map(path => path.getSaveData())));
+}
+
 function draw() {
     requestAnimationFrame(draw);
     ctx.clearRect(0, 0, canvas.width, canvas.height);

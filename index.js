@@ -101,6 +101,11 @@ document.getElementById("importInstructions").onclick = () => {
     for (const pathData of instructions) {
         paths.push(Path.fromSaveData(pathData));
     }
+
+    document.getElementById("paths").innerHTML = "";
+    paths.forEach(path => path.initUI());
+
+    localStorage.flotPathData = JSON.stringify(instructions);
 }
 
 document.getElementById("exportInstructions").onclick = () => {
